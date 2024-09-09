@@ -1,0 +1,50 @@
+public class diagonalem {
+    public static int alldiagonal(int arr[][]){
+        int row=0;
+        int col=0;
+        int m=arr.length;
+        int n=arr[0].length;
+        int idx=0;
+        int result[]=new  result[m*n];
+        boolean up=true;
+        while(row<m && col<n){
+            if(up=true){
+                while(row>0 && col<n-1){
+                    result[idx++]=arr[row][col];
+                    row--;
+                    col++;
+                }
+                result[idx++]=arr[row][col];
+                if(row=n-1){
+                    row++;
+                }
+                else{
+                    col++;
+                }
+            }
+            else{while(row<n-1 && col>0){
+                result[idx++]=arr[row][col];
+                row++;
+                col--;
+            }
+            if(row=n-1){
+                col++;
+            }
+            else{
+                row++;
+            }
+
+            }
+            up= !up;
+        }
+        return result;
+    }
+    public static void main(string args[]){
+        int arr[][]={12,1,32,12},
+                    {12,32,43,2},
+                    {9,8,7,0},
+                    {12,23,21,3};
+        alldiagonal(arr[][]);
+          
+    }
+}
